@@ -12,6 +12,15 @@ Le damos la bienvenida a TA_800, un proyecto desarrollado como parte del último
 - Almacenar las preguntas, respuestas y fechas correspondientes en una base de datos desplegada en la nube (AWS).
 - Desplegar la aplicación en Docker.
 
+<h2 id="Estructura del repositorio"> :file_folder: Estructura del repositorio</h2>
+
+El repositorio de este proyecto contiene los siguientes archivos:
+
+* app.py: archivo principal de la aplicación web.
+* Dockerfile: archivo necesario para construir la imagen de Docker.
+* docker-compose.yml: archivo de configuración de Docker Compose para facilitar el despliegue de la aplicación.
+* requirements.txt: archivo que lista las dependencias del proyecto.
+
 <h2 id="Producto desarrollado"> :abacus: Producto desarrollado</h2>
 
 El repositorio de GitHub contiene los siguientes elementos:
