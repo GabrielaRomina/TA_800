@@ -1,5 +1,8 @@
 # TA_800
 
+![Imagen de portada](imagen/Portada.jpg)
+
+
 Bienvenido a TA_800, un proyecto desarrollado como parte del último módulo del bootcamp de Data Science. Esta aplicación web en Python, que se convertirá en su TA de confianza, utiliza un modelo preentrenado llamado GPT para buscar y brindar la mejor respuesta a la información solicitada por el usuario mediante la combinación de modelos de lenguaje y Google.
 
 ## Objetivos
