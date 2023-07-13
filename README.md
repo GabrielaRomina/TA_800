@@ -1,18 +1,15 @@
 # TA_800
 
-# GPT Googler
-
-Bienvenido a GPT Googler, un proyecto desarrollado como parte del último módulo del bootcamp de Data Science. Esta aplicación web en Python utiliza un modelo preentrenado llamado GPT para buscar y brindar la mejor respuesta a la información solicitada por el usuario mediante la combinación de modelos de lenguaje y Google.
+Bienvenido a TA_800, un proyecto desarrollado como parte del último módulo del bootcamp de Data Science. Esta aplicación web en Python, que se convertirá en su TA de confianza, utiliza un modelo preentrenado llamado GPT para buscar y brindar la mejor respuesta a la información solicitada por el usuario mediante la combinación de modelos de lenguaje y Google.
 
 ## Objetivos
 
 - Desarrollar una aplicación en Python que se conecte a la API de OpenAI de GPT para responder a las solicitudes de los usuarios.
-- Crear un front-end minimalista que permita a los usuarios interactuar con la herramienta.
-- Investigar las bibliotecas [langchain](https://python.langchain.com/docs/get_started/introduction.html) y [OpenAI](https://platform.openai.com/docs/introduction).
+- Crear un front-end que permita a los usuarios interactuar con la herramienta.
 - Almacenar las preguntas, respuestas y fechas correspondientes en una base de datos desplegada en la nube (AWS).
 - Desplegar la aplicación en Docker.
 
-## Entregable
+## Producto desarrollado
 
 El repositorio de GitHub contiene los siguientes elementos:
 
@@ -31,13 +28,13 @@ Para utilizar este repositorio, sigue los pasos a continuación:
 1. Clona este repositorio en tu máquina local:
 
    ```shell
-   git clone https://github.com/tu-usuario/gpt-googler.git
+   git clone https://github.com/tu-usuario/TA_800.git
    ```
 
 2. Accede al directorio del proyecto:
 
    ```shell
-   cd gpt-googler
+   cd TA_800
    ```
 
 3. Configura el entorno virtual (se recomienda el uso de entornos virtuales para evitar conflictos con las dependencias):
