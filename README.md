@@ -61,7 +61,7 @@ Para utilizar este repositorio, sigue los pasos a continuación:
 
 6. Abre tu navegador web y accede a `http://localhost:5000` para interactuar con la aplicación.
 
-### 4. Contribuidores
+<h2 id="Contribuidores"> :technologist::spy: Contribuidores</h2>
 
 -   [Gabriela Romina Lupas](https://github.com/GabrielaRomina) 
 -   [Xavi Albert](https://github.com/XaviAlbert) 
