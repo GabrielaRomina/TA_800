@@ -12,7 +12,7 @@ Le damos la bienvenida a TA_800, un proyecto desarrollado como parte del último
 - Almacenar las preguntas, respuestas y fechas correspondientes en una base de datos desplegada en la nube (AWS).
 - Desplegar la aplicación en Docker.
 
-## Producto desarrollado
+<h2 id="Producto desarrollado"> :abacus: Producto desarrollado</h2>
 
 El repositorio de GitHub contiene los siguientes elementos:
 
@@ -61,7 +61,7 @@ Para utilizar este repositorio, sigue los pasos a continuación:
 
 6. Abre tu navegador web y accede a `http://localhost:5000` para interactuar con la aplicación.
 
-<h2 id="Contribuidores"> :technologist: Contribuidores</h2> :spy:
+<h2 id="Contribuidores"> :technologist: Contribuidores</h2>
 
 -   [Gabriela Romina Lupas](https://github.com/GabrielaRomina) 
 -   [Xavi Albert](https://github.com/XaviAlbert) 
