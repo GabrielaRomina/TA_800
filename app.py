@@ -23,6 +23,15 @@ agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbos
 
 @app.route('/api/chat', methods=['GET'])
 def chat():
+    """
+    Endpoint que responde a las solicitudes GET en '/api/chat'.
+    Recibe la pregunta como parámetro en la URL ('question').
+    Utiliza el modelo ChatGPT de OpenAI para generar una respuesta a la pregunta.
+    También realiza una búsqueda en Google utilizando la API de SerpApi y devuelve enlaces relevantes.
+
+    Returns:
+        JSON: Una respuesta JSON que contiene la respuesta generada y los enlaces relevantes.
+    """
     question = request.args.get('question')
 
     # Buscar en Google utilizando SerpApi
@@ -54,7 +63,10 @@ def chat():
 
 @app.route('/')
 def index():
+    """
+    Página de inicio que muestra un template llamado 'index.html'.
+    """
     return render_template('index.html')
 
 if __name__ == '__main__':
-  app.run(debug = True, host = '0.0.0.0', port=os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get("PORT", 5000))
