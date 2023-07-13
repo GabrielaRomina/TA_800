@@ -21,26 +21,14 @@ El repositorio de este proyecto contiene los siguientes archivos:
 * docker-compose.yml: archivo de configuración de Docker Compose para facilitar el despliegue de la aplicación.
 * requirements.txt: archivo que lista las dependencias del proyecto.
 
-<h2 id="Producto desarrollado"> :abacus: Producto desarrollado</h2>
-
-El repositorio de GitHub contiene los siguientes elementos:
-
-### 1. Aplicación web
-
-La aplicación web se encuentra implementada en Python y se conecta a la API de GPT para proporcionar respuestas a las consultas de los usuarios. El código fuente de la aplicación se encuentra en la carpeta `app`.
-
-### 2. Dockerfile
-
-El archivo `Dockerfile` se incluye para facilitar el despliegue de la aplicación en contenedores Docker.
-
-### 3. Instrucciones de uso
+<h2 id="Instrucciones de uso"> :key: Instrucciones de uso</h2>
 
 Para utilizar este repositorio, sigue los pasos a continuación:
 
 1. Clona este repositorio en tu máquina local:
 
    ```shell
-   git clone https://github.com/tu-usuario/TA_800.git
+   git clone https://github.com/GabrielaRomina/TA_800.git
    ```
 
 2. Accede al directorio del proyecto:
