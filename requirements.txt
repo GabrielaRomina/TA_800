@@ -3,3 +3,4 @@ langchain
 google-search-results
 openai
 python-dotenv
+pymysql
