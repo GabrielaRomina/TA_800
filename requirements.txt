@@ -2,3 +2,4 @@ flask
 langchain
 google-search-results
 openai
+python-dotenv
