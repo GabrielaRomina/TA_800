@@ -5,15 +5,20 @@ from langchain.llms import OpenAI
 from serpapi import GoogleSearch
 import os
 import openai
+from dotenv import load_dotenv
 
-os.environ["OPENAI_API_KEY"] = "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"
-os.environ["SERPAPI_API_KEY"] = "a5bf812b4ac1500d13b11dad7039b34ecfe2a8999698156aa167f1c50e4e4ea7"
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+serpapi_api_key = os.getenv("SERPAPI_API_KEY")
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
 # Load the model
-llm = OpenAI()
+llm = OpenAI(openai_api_key=openai_api_key)
 
 # Load in some tools to use
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
@@ -38,7 +43,7 @@ def chat():
     search_params = {
         "engine": "google",
         "q": question,
-        "api_key": 'a5bf812b4ac1500d13b11dad7039b34ecfe2a8999698156aa167f1c50e4e4ea7'
+        "api_key": serpapi_api_key
     }
     search = GoogleSearch(search_params)
     results = search.get_dict()
