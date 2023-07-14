@@ -42,6 +42,7 @@ conn = pymysql.connect(host=endpoint,
                        password=db_password,
                        db=db_name)
 
+
 # Load the model
 llm = OpenAI()
 
