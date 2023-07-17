@@ -21,6 +21,7 @@ El repositorio de este proyecto contiene los siguientes archivos:
 * docker-compose.yml: archivo de configuración de Docker Compose para facilitar el despliegue de la aplicación.
 * requirements.txt: archivo que lista las dependencias del proyecto.
 * carpetas templates y static: que contienen los archivos *html* y *css* necesarios para desplegar el front end.
+* download_db.py: archivo descargar y visualizar la base de datos actualizada con las últimas consultas en formato .xlsx
 
 <h2 id="Instrucciones de uso"> :key: Instrucciones de uso</h2>
 
@@ -38,23 +39,22 @@ Para utilizar este repositorio, sigue los pasos a continuación:
    cd TA_800
    ```
 
-3. Configura el entorno virtual (se recomienda el uso de entornos virtuales para evitar conflictos con las dependencias):
+3. Despliega la app en tu cuenta de Docker Hub:
 
    ```shell
-   python3 -m venv venv
-   source venv/bin/activate
+   docker build -t <nombre_de_usuario>/appgpt_model .
    ```
 
-4. Instala las dependencias necesarias:
+4. Descarga la imagen creada y ejecútala (recuerda no tener el puerto 5000 en uso y abrir Docker Desktop):
 
    ```shell
-   pip install -r requirements.txt
+   docker run -p 5000:5000 -d <nombre_de_usuario>/appgpt_model
    ```
 
-5. Inicia la aplicación:
+5. Sobre la aplicación desplegada, construye tu versión de la app:
 
    ```shell
-   python app.py
+   docker build -t <nombre_de_usuario>/appgpt_model:v1.0.0 .
    ```
 
 6. Abre tu navegador web y accede a `http://localhost:5000` para interactuar con la aplicación.
