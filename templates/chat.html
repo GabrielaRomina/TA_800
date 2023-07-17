@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/sollog.png') }}">
+        <title>TA-800 Chat</title>
+    </head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="{{ url_for('home') }}">TA-800</a>
+        </div>
+        <div id="nav">
+            <a href="{{ url_for('arnold') }}">Chat</a>
+            <a href="{{ url_for('info') }}">Info</a>
+            <a href="https://www.thebridge.tech/">TheBridge</a>
+            <a href="{{ url_for('skynet') }}">Skynet</a>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <div class="header">
+            <div class="avatar-with-dot">
+                <img class="avatar" src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar">
+                <div class="green-dot-container">
+                    <div class="green-dot"></div>
+                </div>
+            </div>
+            <div class="sender-name">Arnold</div>
+        </div>
+        <div class="conversation" id="conversation"></div>
+        <div class="input-container">
+            <input type="text" id="message-input" class="message-input" placeholder="Escribe tu mensaje...">
+            <button id="send-button" class="send-button">Enviar</button>
+        </div>
+    </div>
+    <main>
+        <script>
+            var messageInput = document.getElementById("message-input");
+            var sendButton = document.getElementById("send-button");
+            var conversationDiv = document.getElementById("conversation");
+
+            sendButton.addEventListener("click", sendMessage);
+            messageInput.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                var inputText = messageInput.value.trim();
+                if (inputText !== "") {
+                    var userMessageDiv = document.createElement("div");
+                    userMessageDiv.classList.add("message", "user-message");
+                    userMessageDiv.textContent = inputText;
+                    conversationDiv.appendChild(userMessageDiv);
+                    messageInput.value = "";
+
+                    // Enviar el mensaje del usuario al servidor
+                    fetch('/api/chat?question=' + encodeURIComponent(inputText))
+                        .then(response => response.json())
+                        .then(data => {
+                            // Crear el mensaje del bot
+                            var botMessageDiv = document.createElement("div");
+                            botMessageDiv.classList.add("message", "bot-message");
+                            botMessageDiv.textContent = data.answer;
+                            conversationDiv.appendChild(botMessageDiv);
+
+                            // Agregar la lista de enlaces
+                            if (data.relevant_links.length > 0) {
+                                var linkText = document.createElement("div");
+                                linkText.classList.add("message", "bot-message", "link-text");
+                                linkText.textContent = "Te comparto unos enlaces por si necesitas más información:";
+                                conversationDiv.appendChild(linkText);
+
+                                var linkList = document.createElement("div");
+                                linkList.classList.add("link-list");
+                                
+                                for (var i = 0; i < data.relevant_links.length; i++) {
+                                    var linkItem = document.createElement("div");
+                                    linkItem.classList.add("message", "bot-message", "link-text");
+                                    linkItem.innerHTML = '<a href="' + data.relevant_links[i] + '">' + data.relevant_links[i] + '</a>';
+                                    linkList.appendChild(linkItem);
+                                }
+                                
+                                conversationDiv.appendChild(linkList);
+                            }
+
+                            // Desplazarse hacia la parte inferior de la conversación
+                            conversationDiv.scrollTop = conversationDiv.scrollHeight;
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                }
+            }
+        </script>
+    </main>  
+    <footer>
+        <p class="footer-text">TA-800 is currently in beta phase JRVX/Skynet®</p>
+    </footer>
+</body>
+    </html>

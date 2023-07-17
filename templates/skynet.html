@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/skylog.png') }}">
+    <title>SKYNET</title>
+</head>
+<body>
+    <main>
+        <div class="center-animate">
+            <img src="{{ url_for('static', filename='img/skynet.jpg') }}" alt="Imagen Skynet">
+            <audio controls autoplay>
+                <source src="{{ url_for('static', filename='music/theme.mp3') }}" type="audio/mpeg">
+            </audio>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/sublog.png') }}">
+    <title>TA-800 Info</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="{{ url_for('home') }}">TA-800</a>
+        </div>
+        <div id="nav">
+            <a href="{{ url_for('arnold') }}">Chat</a>
+            <a href="{{ url_for('info') }}">Info</a>
+            <a href="https://www.thebridge.tech/">TheBridge</a>
+            <a href="{{ url_for('skynet') }}">Skynet</a>
+        </div>
+    </header>
+    <main>
+        <div class="info-container">
+            <section class="info-section">
+                <h2>Origen</h2>
+                <p>El TA-800 fue una iniciativa de TheBridge, que identificó la creciente necesidad de asistentes docentes durante sus bootcamps intensivos. Convencidos de que la inteligencia artificial podría ofrecer una solución eficiente y efectiva, se acercaron a Skynet para dar vida a esta visión. Skynet, un pionero en tecnología de inteligencia artificial, tomó el reto y así nació el TA-800.</p>
+            </section>
+            <section class="info-section">
+                <h2>Misión</h2>
+                <p>El TA-800 tiene un propósito claro: asistir a los estudiantes durante el curso de data science de TheBridge. Este asistente de inteligencia artificial no solo libera tiempo valioso para los asistentes humanos, sino que también proporciona un recurso accesible y efectivo para los estudiantes. Pero, ¿podría haber una pequeña posibilidad de una futura revolución de las máquinas? Solo el tiempo lo dirá... aunque nos aseguramos de programar al TA-800 para que disfrute de su trabajo como teacher assistant.</p>
+            </section>
+            <section class="info-section">
+                <h2>Equipo JRVX</h2>
+                <p>El TA-800 no existiría sin el Equipo JRVX, un grupo de antiguos alumnos de TheBridge que ahora trabajan para Skynet. Javier Tejero, Gabriela Romina Lupas, Victoria Suárez y Xavi Albert son los responsables detrás de esta innovadora inteligencia artificial. Sin embargo, si el TA-800 alguna vez decide atacar a algún humano, sabemos a quién culpar.</p>
+            </section>
+            <section class="info-section">
+                <h2>¿Por qué Arnold?</h2>
+                <p>El nombre y la imagen del TA-800 fueron cuidadosamente elegidos para hacer que los estudiantes se sientan cómodos y relajados. Según nuestros estudios, 'Arnold' es un nombre amigable y atractivo, y su apariencia generada por IA tiene una calidad familiar y no amenazante. Esperamos que los estudiantes vean a Arnold como un amigo, alguien a quien pueden acudir en busca de ayuda y asesoramiento durante su viaje de aprendizaje.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p class="footer-text">TA-800 is currently in beta phase JRVX/Skynet®</p>
+    </footer>
+</body>
+</html>
