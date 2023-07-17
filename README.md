@@ -20,6 +20,7 @@ El repositorio de este proyecto contiene los siguientes archivos:
 * Dockerfile: archivo necesario para construir la imagen de Docker.
 * docker-compose.yml: archivo de configuración de Docker Compose para facilitar el despliegue de la aplicación.
 * requirements.txt: archivo que lista las dependencias del proyecto.
+* carpetas templates y static: que contienen los archivos *html* y *css* necesarios para desplegar el front end.
 
 <h2 id="Instrucciones de uso"> :key: Instrucciones de uso</h2>
 
