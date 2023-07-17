@@ -71,6 +71,13 @@ tools = load_tools(["serpapi", "llm-math"], llm=llm)
 agent = initialize_agent(
     tools, llm, agent="zero-shot-react-description", verbose=True)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/chat')
+def arnold():
+    return render_template('chat.html')
 
 @app.route('/api/chat', methods=['GET'])
 def chat():
@@ -107,11 +114,13 @@ def chat():
 
     return jsonify({'answer': answer, 'relevant_links': relevant_links})
 
+@app.route('/info')
+def info():
+    return render_template('info.html')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
+@app.route('/skynet')
+def skynet():
+    return render_template('skynet.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.environ.get("PORT", 5000))

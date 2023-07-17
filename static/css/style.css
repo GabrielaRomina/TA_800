@@ -1,0 +1,266 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo a,
+#nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#nav a {
+    margin-left: 10px;
+}
+
+.center {
+    text-align: center;
+    padding: 20px;
+}
+
+.center img {
+    max-width: 100%;
+    height: auto;
+}
+
+.center h1, .center p {
+    font-size: 20px;
+}
+
+.chat-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+main {
+    background-image: url('../img/imagen_fondo.jpg');
+    background-size: cover;
+    height: calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-text {
+    font-size: 10px;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px;
+    grid-gap: 20px;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding: 20px;
+}
+
+.info-section h2 {
+    font-weight: bold;
+    text-align: left;
+}
+
+.info-section p {
+    max-width: 100%; 
+    text-align: justify; 
+    line-height: 1.6;
+}
+
+        
+.chat-container {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%; /* Aumentado del 80% al 90% para hacerlo un poco más grande */
+    max-width: 1000px; /* Aumentado de 800px a 1000px para hacerlo un poco más grande */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto; /* Esto centra la caja de chat en la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .avatar-with-dot {
+            position: relative;
+            margin-right: 10px;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('/static/img/avatar.jpg'); 
+            background-size: cover;
+        }
+
+        .green-dot-container {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: -5px;
+            border: 3px solid #2b2b2b;
+        }
+
+        .green-dot  {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            animation: beat .25s infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes beat{
+            to { transform: scale(1.1); }
+        }
+        
+        .sender-name {
+            font-weight: bold;
+        }
+        
+        .conversation {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #5d5d5d;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message {
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        
+        .user-message, .bot-message {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 15px;
+            color: #fff;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background-color: #ffffff; /* Mantén el mismo color para el mensaje del usuario */
+            color: #000000;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: right; /* Esto alineará el texto a la derecha */
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background-color: #000000; /* Cambia a un color oscuro que te guste */
+        }
+        
+        .input-container {
+            display: flex; /* Esto colocará el input y el botón uno al lado del otro */
+            justify-content: space-between; /* Esto pondrá un poco de espacio entre el input y el botón */
+        }
+        
+        .message-input {
+            flex-grow: 1; /* Esto hará que el input tome todo el espacio disponible, mientras que el botón tendrá su tamaño de contenido */
+            margin-right: 10px; /* Esto pondrá un poco de espacio entre el input y el botón */
+        }
+        
+        
+        .send-button {
+            background-color: red;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .link-text {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .link-item {
+            margin-bottom: 5px;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #ffffff;
+            word-wrap: break-word; /* Esto obliga al navegador a saltar de línea dentro de la palabra si el texto es demasiado largo para su contenedor. */
+            overflow-wrap: break-word; /* Esta propiedad es similar a word-wrap pero es la versión actualizada. */
+        }
+
+        .center-animate{
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .center-animate img {
+            max-width: 100%;
+            overflow: hidden;
+            height: auto;
+            /* SLOWLY APPROACHES TO USER, INCREASES HEIGHT AND WIDTH */
+            animation: zoominout 85s infinite alternate;
+                transform-origin: center;
+        }
+        
+        @keyframes zoominout {
+            to { transform: scale(10); }
+        }
