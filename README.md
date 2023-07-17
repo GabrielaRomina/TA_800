@@ -39,7 +39,7 @@ Para utilizar este repositorio, sigue los pasos a continuación:
    cd TA_800
    ```
 
-3. Despliega la app en tu cuenta de Docker Hub:
+3. Despliega la app en tu cuenta de Docker Hub (¡que no se te olvide el punto del final!):
 
    ```shell
    docker build -t <nombre_de_usuario>/appgpt_model .
