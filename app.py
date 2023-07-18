@@ -15,6 +15,7 @@ fecha_actual = datetime.date.today()
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
+# Obtener las claves de API desde las variables de entorno
 openai_api_key = os.getenv("OPENAI_API_KEY")
 serpapi_api_key = os.getenv("SERPAPI_API_KEY")
 
@@ -35,6 +36,7 @@ password = "12345678"
 host = 'datagpt.cgtlbgxgrxsx.us-east-2.rds.amazonaws.com'
 port = 3306
 
+# Conectar a la base de datos
 db = pymysql.connect(
     host=host,
     user=username,
@@ -43,12 +45,15 @@ db = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor
 )
 
+# Crear un cursor para ejecutar consultas
 cursor = db.cursor()
 
+# Obtener la versión de MySQL
 cursor.execute('SELECT VERSION()')
 version = cursor.fetchone()
 print(f'MySQL version: {version}')
 
+# Crear la tabla si no existe
 create_table = '''
 CREATE TABLE IF NOT EXISTS datagpt (
     id INT NOT NULL AUTO_INCREMENT,
@@ -61,26 +66,33 @@ CREATE TABLE IF NOT EXISTS datagpt (
 '''
 cursor.execute(create_table)
 
+# Seleccionar la base de datos
 use_db = ''' USE datagpt'''
 cursor.execute(use_db)
 
+# Inicializar el modelo de lenguaje
 llm = OpenAI()
 
+# Cargar las herramientas necesarias
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
 
+# Inicializar el agente
 agent = initialize_agent(
     tools, llm, agent="zero-shot-react-description", verbose=True)
 
 @app.route('/')
 def home():
+    """Ruta principal que muestra la página de inicio."""
     return render_template('index.html')
 
 @app.route('/chat')
 def arnold():
+    """Ruta que muestra la página de chat."""
     return render_template('chat.html')
 
 @app.route('/api/chat', methods=['GET'])
 def chat():
+    """Ruta para manejar las solicitudes de chat API."""
     question = request.args.get('question')
     fecha_actual = datetime.datetime.today()
 
@@ -116,10 +128,12 @@ def chat():
 
 @app.route('/info')
 def info():
+    """Ruta que muestra la página de información."""
     return render_template('info.html')
 
 @app.route('/skynet')
 def skynet():
+    """Ruta que muestra la página de Skynet."""
     return render_template('skynet.html')
 
 if __name__ == '__main__':

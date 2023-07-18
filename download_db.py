@@ -6,36 +6,38 @@ password = "12345678"
 host = "datagpt.cgtlbgxgrxsx.us-east-2.rds.amazonaws.com" 
 port = 3306
 
-'''
-pymysql.cursors.DictCursor para que los resultados que devuelva sean diccionarios,
-por defecto devuelve tuplas. Asi podemos acceder por clave a las columnas.
-'''
-
-db = pymysql.connect(host = host,
-                     user = username,
-                     password = password,
-                     cursorclass = pymysql.cursors.DictCursor
+# Conectar a la base de datos
+db = pymysql.connect(
+    host=host,
+    user=username,
+    password=password,
+    cursorclass=pymysql.cursors.DictCursor
 )
 
-# El objeto cursor es el que ejecutará las queries y devolverá los resultados
-
+# Crear un objeto cursor para ejecutar consultas y obtener resultados
 cursor = db.cursor()
 
-# Para usar la BD  recien creada
-
+# Seleccionar la base de datos a utilizar
 cursor.connection.commit()
 use_db = ''' USE datagpt'''
 cursor.execute(use_db)
 
-# checkear todas las tablas que tiene mi db
+# Consultar todas las tablas en la base de datos
 cursor.execute('SHOW TABLES')
-cursor.fetchall()
+tables = cursor.fetchall()
 
+# Ejecutar la consulta SQL para seleccionar todas las filas de la tabla 'datagpt'
 sql = '''SELECT * FROM datagpt'''
 cursor.execute(sql)
 
-mi_lista = cursor.fetchall()
+# Obtener todas las filas devueltas por la consulta
+result = cursor.fetchall()
 
-df = pd.DataFrame(mi_lista)
+# Crear un DataFrame a partir de los datos obtenidos
+df = pd.DataFrame(result)
+
+# Guardar el DataFrame en un archivo Excel
+df.to_excel('GPT_TA800.xlsx')
+
 
 df.to_excel('GPT_TA800.xlsx')
