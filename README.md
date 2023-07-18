@@ -18,7 +18,7 @@ El repositorio de este proyecto contiene los siguientes archivos:
 
 * app.py: archivo principal de la aplicación web.
 * Dockerfile: archivo necesario para construir la imagen de Docker.
-* docker-compose.yml: archivo de configuración de Docker Compose para facilitar el despliegue de la aplicación.
+* docker-compose.yml: archivo de configuración de *Docker Compose* para facilitar el despliegue de la aplicación.
 * requirements.txt: archivo que lista las dependencias del proyecto.
 * carpetas *templates* y *static*: que contienen los archivos *html* y *css* necesarios para desplegar el front end.
 * download_db.py: archivo descargar y visualizar la base de datos actualizada con las últimas consultas en formato .xlsx
