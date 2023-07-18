@@ -31,44 +31,44 @@ tools = load_tools(["serpapi", "llm-math"], llm=llm)
 # Initialize the agent
 agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
 
-username = "admin"
-password = "12345678"
-host = 'datagpt.cgtlbgxgrxsx.us-east-2.rds.amazonaws.com'
-port = 3306
+# username = "admin"
+# password = "12345678"
+# host = 'datagpt.cgtlbgxgrxsx.us-east-2.rds.amazonaws.com'
+# port = 3306
 
-# Conectar a la base de datos
-db = pymysql.connect(
-    host=host,
-    user=username,
-    password=password,
-    database="datagpt",
-    cursorclass=pymysql.cursors.DictCursor
-)
+# # Conectar a la base de datos
+# db = pymysql.connect(
+#     host=host,
+#     user=username,
+#     password=password,
+#     database="datagpt",
+#     cursorclass=pymysql.cursors.DictCursor
+# )
 
-# Crear un cursor para ejecutar consultas
-cursor = db.cursor()
+# # Crear un cursor para ejecutar consultas
+# cursor = db.cursor()
 
-# Obtener la versión de MySQL
-cursor.execute('SELECT VERSION()')
-version = cursor.fetchone()
-print(f'MySQL version: {version}')
+# # Obtener la versión de MySQL
+# cursor.execute('SELECT VERSION()')
+# version = cursor.fetchone()
+# print(f'MySQL version: {version}')
 
-# Crear la tabla si no existe
-create_table = '''
-CREATE TABLE IF NOT EXISTS datagpt (
-    id INT NOT NULL AUTO_INCREMENT,
-    date DATE,
-    question TEXT,
-    answer TEXT,
-    links TEXT,
-    PRIMARY KEY (id)
-)
-'''
-cursor.execute(create_table)
+# # Crear la tabla si no existe
+# create_table = '''
+# CREATE TABLE IF NOT EXISTS datagpt (
+#     id INT NOT NULL AUTO_INCREMENT,
+#     date DATE,
+#     question TEXT,
+#     answer TEXT,
+#     links TEXT,
+#     PRIMARY KEY (id)
+# )
+# '''
+# cursor.execute(create_table)
 
-# Seleccionar la base de datos
-use_db = ''' USE datagpt'''
-cursor.execute(use_db)
+# # Seleccionar la base de datos
+# use_db = ''' USE datagpt'''
+# cursor.execute(use_db)
 
 # Inicializar el modelo de lenguaje
 llm = OpenAI()
