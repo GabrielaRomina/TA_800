@@ -3,12 +3,12 @@
 ![Imagen de portada](images/Portada.jpg)
 
 
-Le damos la bienvenida a TA_800, un proyecto desarrollado como parte del último módulo del bootcamp de Data Science de *The Bridge*. Esta aplicación web en Python, que se convertirá en su TA de confianza, utiliza un modelo preentrenado llamado ChatGPT para buscar y brindar la mejor respuesta a la información solicitada por el usuario mediante la combinación de modelos de lenguaje y Google.
+Le damos la bienvenida a TA_800, un proyecto desarrollado como parte del último módulo del bootcamp de *Data Science* de *The Bridge*. Esta aplicación web en Python, que se convertirá en su TA de confianza, utiliza un modelo preentrenado llamado ChatGPT para buscar y brindar la mejor respuesta a la información solicitada por el usuario mediante la combinación de modelos de lenguaje y Google.
 
 <h2 id="Objetivos"> :dart: Objetivos</h2>
 
 - Desarrollar una aplicación en Python que se conecte a la API de OpenAI de GPT para responder a las solicitudes de los usuarios.
-- Crear un front-end que permita a los usuarios interactuar con la herramienta.
+- Crear un *front-end* que permita a los usuarios interactuar con la herramienta.
 - Almacenar las preguntas, respuestas y fechas correspondientes en una base de datos desplegada en la nube (AWS).
 - Desplegar la aplicación en Docker.
 
